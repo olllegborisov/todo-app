@@ -1,8 +1,8 @@
 
 import './App.css'
-import TodoForm from './assets/components/TodoForm'
+import TodoForm from './assets/components/TodoForm/TodoForm'
 import TodoList from './assets/components/TodoList'
-import TodoFilter from './assets/components/TodoFilter'
+import TodoFilter from './assets/components/TodoFilter/TodoFilter'
 
 
 function App() {

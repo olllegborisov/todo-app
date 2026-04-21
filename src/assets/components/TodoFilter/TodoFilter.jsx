@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setFilter } from '../../store/todoSlice'
+import { setFilter } from '../../../store/todoSlice'
 import style from './TodoFilter.module.css'
 
 export default function TodoFilter() {
