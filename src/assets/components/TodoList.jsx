@@ -14,7 +14,7 @@ export default function TodoList() {
         dispatch(toggleTodo(todo.id))
     }
 
-    function handeInputLeydown(e, todo) {
+    function handeInputKeydown(e, todo) {
         if (e.key === 'Enter') {
             dispatch(editTodo({ id: todo.id, text: editText }))
             setEditingId(null)
@@ -45,7 +45,7 @@ export default function TodoList() {
                             <input
                                 value={editText}
                                 onChange={(e) => setEditText(e.target.value)}
-                                onKeyDown={(e) => handeInputLeydown(e, todo)}
+                                onKeyDown={(e) => handeInputKeydown(e, todo)}
                             />
                             <button
                                 onClick={(e) => handleButtonSaveOnClick(e, todo)}
