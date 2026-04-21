@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeTodo, toggleTodo, selectVisibleTodos, editTodo } from '../../store/todoSlice'
+import style from './TodoList.module.css'
 
 export default function TodoList() {
     const [editingId, setEditingId] = useState(null)
@@ -13,41 +14,44 @@ export default function TodoList() {
         dispatch(toggleTodo(todo.id))
     }
 
+    function handeInputLeydown(e, todo) {
+        if (e.key === 'Enter') {
+            dispatch(editTodo({ id: todo.id, text: editText }))
+            setEditingId(null)
+        }
+        if (e.key === 'Escape') {
+            setEditingId(null)
+            setEditText('')
+        }
+    }
+
+    function handleButtonSaveOnClick(e, todo) {
+        e.stopPropagation()
+        dispatch(editTodo({
+            id: todo.id,
+            text: editText
+        }))
+
+        setEditingId(null)
+        setEditText('')
+    }
+
     return (
-        <ul className='todo-list'>
+        <ul className={style.list}>
             {todos.map(todo => (
-                <li key={todo.id} onClick={() => handleListItemOnClick(todo)} className={`${todo.isCompleted ? 'checked' : ''}`} >
+                <li key={todo.id} onClick={() => handleListItemOnClick(todo)} className={`${todo.isCompleted ? `${style.checked}` : ''}`} >
                     {editingId === todo.id ? (
                         <>
-                        <input
-                            value={editText}
-                            onChange={(e) => setEditText(e.target.value)}
-                              onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                            dispatch(editTodo({ id: todo.id, text: editText }))
-                            setEditingId(null)
-                            }
-
-                            if (e.key === 'Escape') {
-                            setEditingId(null)
-                            setEditText('')
-                            }
-                        }}
-                        />
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation()
-                                dispatch(editTodo({
-                                id: todo.id,
-                                text: editText
-                                }))
-
-                                setEditingId(null)
-                                setEditText('')
-                            }}
-                            >
-                            Save
-                        </button>
+                            <input
+                                value={editText}
+                                onChange={(e) => setEditText(e.target.value)}
+                                onKeyDown={(e) => handeInputLeydown(e, todo)}
+                            />
+                            <button
+                                onClick={(e) => handleButtonSaveOnClick(e, todo)}
+                                >
+                                Save
+                            </button>
                         </>
                     ) : (
                         <span>{todo.text}</span>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../store/todoSlice'
+import styles from './TodoForm.module.css'
 
 export default function TodoForm() {
     const [todo, setTodo] = useState('')
@@ -17,11 +18,10 @@ export default function TodoForm() {
 
     return (
     <>
-        <h1>Список задач</h1>
-        <form onSubmit={handleFormSubmit} className='todo-form'>
-            <label htmlFor="todo" className='todo-label'>Введите задачу</label>
-            <input id="todo" className='todo-input' placeholder='Введите текст' onChange={(e) => setTodo(e.target.value)} value={todo}></input>
-            <button type='submit'>Отправить</button>
+        <form className={styles.form} onSubmit={handleFormSubmit}>
+            <label className={styles.label} htmlFor="todo" >Введите задачу</label>
+            <input className={styles.input} id="todo"  placeholder='Введите текст' onChange={(e) => setTodo(e.target.value)} value={todo}></input>
+            <button className={styles.button} type='submit'>Отправить</button>
         </form>
     </>
   )

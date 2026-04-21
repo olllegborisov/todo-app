@@ -7,11 +7,12 @@ import TodoFilter from './assets/components/TodoFilter'
 
 function App() {
   return (
-    <>
+    <div className="container">
+      <h1 className="title">Список задач</h1>
       <TodoForm />
       <TodoList />
       <TodoFilter/>
-    </>
+    </div>
   )
 }
 
