@@ -1,7 +1,7 @@
 
 import './App.css'
 import TodoForm from './assets/components/TodoForm/TodoForm'
-import TodoList from './assets/components/TodoList'
+import TodoList from './assets/components/TodoList/TodoList'
 import TodoFilter from './assets/components/TodoFilter/TodoFilter'
 
 
