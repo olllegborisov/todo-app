@@ -1,5 +1,5 @@
 import { useSelector} from 'react-redux'
-import { selectVisibleTodos } from '../../../store/todoSlice'
+import { selectVisibleTodos } from '../../store/todoSlice'
 import styles from './TodoList.module.css'
 import TodoItem from './TodoItem'
 

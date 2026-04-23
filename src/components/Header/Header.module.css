@@ -1,0 +1,25 @@
+.wrapper {
+    padding: 30px 0px;
+    background-color: #fff;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.text {
+    font-weight: 400;
+    font-size: 20px;
+}

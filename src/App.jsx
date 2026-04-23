@@ -1,18 +1,15 @@
 
 import './App.css'
-import TodoForm from './assets/components/TodoForm/TodoForm'
-import TodoList from './assets/components/TodoList/TodoList'
-import TodoFilter from './assets/components/TodoFilter/TodoFilter'
+import Header from './components/Header/Header'
+import TodoContent from './components/TodoContent/TodoContent'
 
 
 function App() {
   return (
-    <div className="container">
-      <h1 className="title">Список задач</h1>
-      <TodoForm />
-      <TodoList />
-      <TodoFilter/>
-    </div>
+    <>
+      <Header />
+      <TodoContent />
+    </>
   )
 }
 

@@ -1,0 +1,15 @@
+.wrapper {
+  margin-top: 89px;
+  display: grid;
+  grid-template-columns: 677fr 734fr;
+  gap: 77px;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.title {
+  font-weight: 600;
+}
+

@@ -1,5 +1,39 @@
-body {
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/src/assets/fonts/SFPro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/src/assets/fonts/SFPro-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'SF Pro', sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #302F3D;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #302F3D;
 }
 
 /* :root {
