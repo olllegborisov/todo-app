@@ -7,12 +7,23 @@ export default function TodoList() {
 
 
     const todos = useSelector(selectVisibleTodos)
+    const activeTodos = todos.filter(todo => !todo.isCompleted)
+    const completedTodos = todos.filter(todo => todo.isCompleted)
 
     return (
-        <ul className={styles.list}>
-            {todos.map(todo => (
-                <TodoItem key={todo.id} todo={todo}/>
-            ))}
-        </ul>
+        <>
+            <div>Активные</div>
+            <ul className={styles.list}>     
+                {activeTodos.map(todo => (
+                    <TodoItem key={todo.id} todo={todo}/> 
+                ))}
+            </ul>
+                <div>Выполненные</div>
+            <ul className={styles.list}>     
+                {completedTodos.map(todo => (
+                    <TodoItem key={todo.id} todo={todo}/>
+                ))}
+            </ul>   
+        </>
     )
 }

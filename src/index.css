@@ -36,6 +36,13 @@ a {
   color: #302F3D;
 }
 
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
 /* :root {
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
 

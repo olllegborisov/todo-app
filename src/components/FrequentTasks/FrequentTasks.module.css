@@ -1,0 +1,12 @@
+.buttonAccent {
+    background-color: #221AB7;   
+    width: min-content;
+}
+.buttonAccent svg {
+    width: 24px;
+    height: 24px;
+}
+.button {
+    padding: 12px 32px;
+    font-size: 20px;
+}

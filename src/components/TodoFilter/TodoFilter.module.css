@@ -1,4 +1,17 @@
 .filter {
   width: 500px;
   margin: 0 auto;
+  display: flex;
+  gap: 12px;
+}
+.button {
+  border: 1px solid #221AB7;
+  background: #fff;
+  padding: 12px 32px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.active {
+  background-color: #0E0A54;
+  color: #fff;
 }
