@@ -12,13 +12,13 @@ export default function TodoList() {
 
     return (
         <>
-            <div>Активные</div>
+            <div>Активные:</div>
             <ul className={styles.list}>     
                 {activeTodos.map(todo => (
                     <TodoItem key={todo.id} todo={todo}/> 
                 ))}
             </ul>
-                <div>Выполненные</div>
+                <div>Выполненные:</div>
             <ul className={styles.list}>     
                 {completedTodos.map(todo => (
                     <TodoItem key={todo.id} todo={todo}/>

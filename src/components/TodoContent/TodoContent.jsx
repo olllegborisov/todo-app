@@ -12,6 +12,10 @@ function TodoContent() {
         <h1 className={styles.title}>Задачи на день</h1>
         <TodoForm />
         <FrequentTasks />
+        <div className={styles.note}>
+          <label htmlFor="textarea">Заметка:</label>
+          <textarea id="textarea" className={styles.textarea} value="Доставку заказать только после 18:00, после этого сразу отправить чек" />
+        </div>
       </div>
       <div className={styles.inner}>
         <TodoFilter/>

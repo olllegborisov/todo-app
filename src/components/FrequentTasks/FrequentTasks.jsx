@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import React, { useState } from 'react'
-import { addTodo } from '../../store/todoSlice'
+import { addTodo } from '../../store/todoSlice.js'
 import RefreshIcon from '../../assets/icons/refresh.svg?react'
 import tasks from '../../data/tasks.js'
 import getRandomTasks from '../../utils/getRandomTasks.js'
@@ -18,18 +18,18 @@ const FrequentTasks = () => {
         dispatch(addTodo(text))
     }
 
-  return (
-    <>
-        <div className={styles.wrapper}>
-            <button className={`${styles.buttonAccent} ${styles.button}`} onClick={refresh}><RefreshIcon/></button>
-            {randomTasks.map((item) => {
-                return (
-                <button className={styles.button} onClick={() => handleClick(item)}>{item}</button>
-                )
-            })}
-        </div>
-    </>
-  )
+    return (
+        <>
+            <div className={styles.wrapper}>
+                <button className={`${styles.buttonAccent}`} onClick={refresh} aria-label="Обновить задачи"><RefreshIcon/></button>
+                {randomTasks.map((item, index) => {
+                    return (
+                    <button key={index} className={styles.button} onClick={() => handleClick(item)} >{item}</button>
+                    )
+                })}
+            </div>
+        </>
+    )
 }
 
 export default FrequentTasks

@@ -8,10 +8,12 @@
   border: 1px solid #221AB7;
   background: #fff;
   padding: 12px 32px;
-  border-radius: 100px;
+  border-radius: 30px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 .active {
   background-color: #0E0A54;
   color: #fff;
+  border: 1px solid transparent;
 }

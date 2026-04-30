@@ -1,6 +1,21 @@
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    
+    height: 107px;
+    overflow: hidden;
+}
 .buttonAccent {
     background-color: #221AB7;   
     width: min-content;
+    padding: 10px 32px;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
 }
 .buttonAccent svg {
     width: 24px;
@@ -9,4 +24,7 @@
 .button {
     padding: 12px 32px;
     font-size: 20px;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
 }

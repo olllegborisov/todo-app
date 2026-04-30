@@ -1,7 +1,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .label {
@@ -11,14 +10,14 @@
 
 .inputWrapper {
   display: grid;
-  grid-template-columns: 430fr 235fr;
+  grid-template-columns: minmax(200px, 1.4fr) 0.6fr;
   gap: 12px;
 }
 
 .input {
   padding: 12px 32px;
   border: 1px solid #221AB7;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 20px;
 }
 
@@ -33,11 +32,10 @@
 .button {
   padding: 12px 32px;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: #221AB7;
   border: none;
   font-size: 20px;
-
-}
-.button:focus {
+  cursor: pointer;
+  white-space: nowrap;
 }

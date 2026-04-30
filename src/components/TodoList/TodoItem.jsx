@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleTodo, removeTodo, editTodo } from '../../store/todoSlice'
-
+import DeleteIcon from '../../assets/icons/delete.svg?react'
+import EditIcon from '../../assets/icons/edit.svg?react'
 import styles from './TodoList.module.css'
 
 export default function TodoItem({todo}) {
@@ -29,31 +30,65 @@ export default function TodoItem({todo}) {
         }
     }
 
-  return (
-    <li>
+return (
+    <li className={styles.item}>
         {editingId === todo.id ? (
             <>
-                <input
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    onKeyDown={(e) => handleKeyDown(e)}
-                />
-                <button onClick={handleSave}>Save</button>
+                <div className={styles.editRow}>
+                    <input
+                        className={styles.editInput}
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        onKeyDown={(e) => handleKeyDown(e)}
+                    />
+                    <button type="button" className={styles.btn} onClick={handleSave} aria-label="Сохранить задачу">
+                        <EditIcon />
+                    </button>
+                </div>
+                <div className={styles.itemActions}>
+                    <button type="button" className={styles.btn} onClick={() => dispatch(removeTodo(todo.id))} aria-label="Удалить задачу">
+                        <DeleteIcon />
+                    </button>
+                </div>
             </>
         ) : (
             <>
-                <input
-                    type="checkbox"
-                    checked={todo.isCompleted}
-                    onChange={() => dispatch(toggleTodo(todo.id))}
-                />
-                <span className={todo.isCompleted 
-                    ? styles.completed : ''}>{todo.text}</span>
+                <div className={styles.taskRow}>
+                    <label className={styles.checkbox}>
+                        <input
+                            type="checkbox"
+                            className={styles.checkboxInput}
+                            checked={todo.isCompleted}
+                            onChange={() => dispatch(toggleTodo(todo.id))}
+                            aria-label={
+                            todo.isCompleted
+                            ? 'Отметить задачу как невыполненную'
+                            : 'Отметить задачу как выполненную'
+                            }
+                        />
+                        <span
+                            className={`${styles.checkboxVisual} ${todo.isCompleted ? styles.checkboxVisualChecked : ''}`}
+                            aria-hidden
+                        >
+                            {todo.isCompleted ? <span className={styles.checkmark} /> : null}
+                        </span>
+                    </label>
+                    <span
+                        className={`${styles.taskText} ${todo.isCompleted ? styles.completed : ''}`}
+                    >
+                        {todo.text}
+                    </span>
+                </div>
+                <div className={styles.itemActions}>
+                    <button type="button" className={styles.btn} onClick={handleEditClick} aria-label="Редактировать задачу">
+                        <EditIcon />
+                    </button>
+                    <button type="button" className={styles.btn} onClick={() => dispatch(removeTodo(todo.id))} aria-label="Удалить задачу">
+                        <DeleteIcon />
+                    </button>
+                </div>
             </>
         )}
-
-      <button onClick={handleEditClick}> Редактировать</button>
-      <button onClick={() =>dispatch(removeTodo(todo.id))}>❌</button>
     </li>
-  )
+    )
 }

@@ -1,8 +1,9 @@
 .wrapper {
   margin-top: 89px;
   display: grid;
-  grid-template-columns: 677fr 734fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 77px;
+  padding-bottom: 143px;
 }
 .inner {
   display: flex;
@@ -13,3 +14,18 @@
   font-weight: 600;
 }
 
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-size: 20px;
+}
+
+.textarea {
+  resize: none;
+  padding: 24px;
+  border-radius: 30px;
+  border: 1px solid #221AB7;
+  height: 190px;
+  font-size: 20px;
+}

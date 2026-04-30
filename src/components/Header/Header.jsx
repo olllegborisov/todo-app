@@ -15,7 +15,7 @@ function Header() {
                     </a>
                     <a href="https://t.me/olllegborisov" className={styles.action}>
                         <TelegramIcon />
-                        <span className={styles.text}>olllegborisov@gmail.com</span>
+                        <span className={styles.text}>olllegborisov</span>
                     </a>
                 </div>
             </div>
