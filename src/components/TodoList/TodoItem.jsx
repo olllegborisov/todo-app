@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion as Motion } from 'motion/react'
 import { useDispatch } from 'react-redux'
 import { toggleTodo, removeTodo, editTodo } from '../../store/todoSlice'
 import DeleteIcon from '../../assets/icons/delete.svg?react'
@@ -22,7 +23,7 @@ export default function TodoItem({todo}) {
         setEditingId(null)
     }
 
-    const handleKeyDown = (e, todo) => {
+    const handleKeyDown = (e) => {
         if (e.key === 'Enter') handleSave()
         if (e.key === 'Escape') {
             setEditingId(null)
@@ -31,7 +32,29 @@ export default function TodoItem({todo}) {
     }
 
 return (
-    <li className={styles.item}>
+        <Motion.li
+            layout
+            initial={{
+                opacity: 0,
+                y: -8,
+                filter: 'blur(6px)',
+        }}
+        animate={{
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+        }}
+        exit={{
+            opacity: 0,
+            y: 40,
+            filter: 'blur(10px)',
+        }}
+        transition={{
+            duration: 0.3,
+            ease: 'easeInOut',
+        }}
+        className={styles.item}
+    >
         {editingId === todo.id ? (
             <>
                 <div className={styles.editRow}>
@@ -89,6 +112,6 @@ return (
                 </div>
             </>
         )}
-    </li>
+    </Motion.li>
     )
 }
