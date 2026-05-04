@@ -34,27 +34,28 @@ export default function TodoItem({todo}) {
 return (
         <Motion.li
             layout
+            layoutId={`todo-${todo.id}`}
             initial={{
                 opacity: 0,
                 y: -8,
                 filter: 'blur(6px)',
-        }}
-        animate={{
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-        }}
-        exit={{
-            opacity: 0,
-            y: 40,
-            filter: 'blur(10px)',
-        }}
-        transition={{
-            duration: 0.3,
-            ease: 'easeInOut',
-        }}
-        className={styles.item}
-    >
+            }}
+            animate={{
+                opacity: 1,
+                y: 0,
+                filter: 'blur(0px)',
+            }}
+            exit={{
+                opacity: 0,
+                y: -8,
+                filter: 'blur(10px)',
+            }}
+            transition={{
+                duration: 0.6,
+                ease: 'ease',
+            }}
+            className={styles.item}
+        >
         {editingId === todo.id ? (
             <>
                 <div className={styles.editRow}>

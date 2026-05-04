@@ -14,12 +14,12 @@ export default function TodoList() {
     return (
         <LayoutGroup>
             <Motion.div
-                layout
+                layout="position"
                 transition={{
                     layout: {
                         type: 'spring',
-                        stiffness: 250,
-                        damping: 28,
+                        stiffness: 90,
+                        damping: 15,
                     },
                 }}
                 className={styles.listWrapper}
@@ -34,12 +34,12 @@ export default function TodoList() {
                 </ul>
             </Motion.div>
             <Motion.div
-                layout
+                layout="position"
                 transition={{
                     layout: {
                         type: 'spring',
-                        stiffness: 250,
-                        damping: 28,
+                        stiffness: 90,
+                        damping: 15,
                     },
                 }}
                 className={styles.listWrapper}
