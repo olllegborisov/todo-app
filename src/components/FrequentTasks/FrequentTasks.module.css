@@ -29,3 +29,31 @@
     border: 0;
     cursor: pointer;
 }
+
+/* .button:hover {
+    animation: springyEffect 1s cubic-bezier(.175,.885,.32,1.275) both
+}
+
+
+
+@keyframes springyEffect {
+    0% {
+        transform: scale(1)
+    }
+
+    25% {
+        transform: scale(1.1,.9)
+    }
+
+    50% {
+        transform: scale(.95,1.05)
+    }
+
+    75% {
+        transform: scale(1.05,.95)
+    }
+
+    to {
+        transform: scale(1)
+    }
+} */

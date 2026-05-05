@@ -1,6 +1,5 @@
 .filter {
   width: 500px;
-  margin: 0 auto;
   display: flex;
   gap: 12px;
 }
@@ -11,6 +10,7 @@
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s ease;
+  font-size: 20px;
 }
 .active {
   background-color: #0E0A54;

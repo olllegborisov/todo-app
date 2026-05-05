@@ -13,6 +13,12 @@ export default function TodoList() {
 
     return (
         <LayoutGroup>
+            {activeTodos.length === 0 ? (
+                <div className={styles.empty}>
+                    <div>Активные:</div>
+                    <p>Задач нет</p>
+                </div>
+            ) : (
             <Motion.div
                 layout="position"
                 transition={{
@@ -56,6 +62,7 @@ export default function TodoList() {
                     </Motion.ul>
                 </Motion.div>
             </Motion.div>
+            )}
             <Motion.div
                 layout="position"
                 transition={{
