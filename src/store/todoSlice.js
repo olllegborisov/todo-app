@@ -12,7 +12,7 @@ const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo(state, action) {
-            state.list.push({
+            state.list.unshift({
                 id: uuidv4(),
                 text: action.payload,
                 isCompleted: false

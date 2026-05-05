@@ -6,9 +6,10 @@ import DeleteIcon from '../../assets/icons/delete.svg?react'
 import EditIcon from '../../assets/icons/edit.svg?react'
 import styles from './TodoList.module.css'
 
-export default function TodoItem({todo}) {
+export default function TodoItem({todo, listType}) {
     
     const dispatch = useDispatch()
+
 
     const [editingId, setEditingId] = useState(null)
     const [text, setText] = useState(todo.text)
@@ -31,21 +32,57 @@ export default function TodoItem({todo}) {
         }
     }
 
+    const animations = {
+    active: {
+        enter: {
+            opacity: { delay: 0.25, duration: 0.3, ease: 'easeInOut' },
+            y: { delay: 0.25, duration: 0.3, ease: 'easeInOut' },
+            filter: { delay: 0.25, duration: 0.3, ease: 'easeInOut' },
+        },
+        exit: {
+            opacity: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+            y: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+            filter: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+
+        },
+    },
+    completed: {
+        enter: {
+            opacity: { delay: 0.35, duration: 0.3, ease: 'easeInOut' },
+            y: { delay: 0.35, duration: 0.3, ease: 'easeInOut' },
+            filter: { delay: 0.35, duration: 0.3, ease: 'easeInOut' },
+        },
+        exit: {
+            opacity: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+            y: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+            filter: { delay: 0, duration: 0.3, ease: 'easeInOut' },
+        },
+    },
+}
+    const currentAnimation = animations[listType]
+
 return (
-        <Motion.li
+        <Motion.li 
         layout
-        initial={{ opacity: 0, y: -8, filter: 'blur(6px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        exit={{ opacity: 0, y: -8, filter: 'blur(10px)' }}
+        initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
+        animate={{ 
+            opacity: 1,  
+            y: 0,
+            filter: 'blur(0px)',
+            transition: currentAnimation.enter,
+        }}
+        exit={{ 
+            opacity: 0,  
+            y: 16,
+            filter: 'blur(10px)' ,
+            transition: currentAnimation.exit,
+        }}
         transition={{
-          layout: {
-            type: 'spring',
-            stiffness: 90,
-            damping: 18,
-          },
-          opacity: { duration: 0.35, ease: 'easeInOut' },
-          filter: { duration: 0.35, ease: 'easeInOut' },
-          y: { duration: 0.35, ease: 'easeInOut' },
+                layout: {
+                type: 'spring',
+                stiffness: 90,
+                damping: 18,
+            },
         }}
             className={styles.item}
         >

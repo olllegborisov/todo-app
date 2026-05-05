@@ -37,7 +37,6 @@ export default function TodoList() {
                         opacity: { duration: 0.2, ease: 'easeInOut' },
                         marginTop: { duration: 0.35, ease: 'easeInOut' },
                     }}
-                    style={{ overflow: 'hidden' }}
                 >
                     <Motion.ul layout
                         className={styles.list}
@@ -51,7 +50,7 @@ export default function TodoList() {
                     >     
                         <AnimatePresence>
                             {activeTodos.map(todo => (
-                                <TodoItem key={todo.id} todo={todo}/> 
+                                <TodoItem key={todo.id} todo={todo} listType="active"/> 
                             ))}
                         </AnimatePresence>
                     </Motion.ul>
@@ -81,7 +80,6 @@ export default function TodoList() {
                         opacity: { duration: 0.2, ease: 'easeInOut' },
                         marginTop: { duration: 0.35, ease: 'easeInOut' },
                     }}
-                    style={{ overflow: 'hidden' }}
                 >
                     <Motion.ul layout
                         className={styles.list}
@@ -95,7 +93,7 @@ export default function TodoList() {
                     >  
                         <AnimatePresence>
                             {completedTodos.map(todo => (
-                                <TodoItem key={todo.id} todo={todo}/>
+                                <TodoItem key={todo.id} todo={todo} listType="completed"/>
                             ))}
                         </AnimatePresence>
                     </Motion.ul>
