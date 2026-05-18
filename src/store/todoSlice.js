@@ -4,7 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
     list: [],
-    filter: 'all'
+    filter: 'all',
+    note: 'Доставку заказать только после 18:00, после этого сразу отправить чек'
 }
 
 const todoSlice = createSlice({
@@ -38,6 +39,9 @@ const todoSlice = createSlice({
             if (todo) {
                 todo.text = text
             }
+        },
+        setNote(state, action) {
+            state.note = action.payload
         }
     }
 })
@@ -56,5 +60,5 @@ export const selectVisibleTodos = (state) => {
     return list
 }
 
-export const { addTodo, removeTodo, toggleTodo, setFilter, editTodo } = todoSlice.actions
+export const { addTodo, removeTodo, toggleTodo, setFilter, editTodo, setNote } = todoSlice.actions
 export default todoSlice.reducer

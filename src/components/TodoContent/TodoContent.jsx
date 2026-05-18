@@ -3,9 +3,12 @@ import TodoList from '../TodoList/TodoList'
 import TodoFilter from '../TodoFilter/TodoFilter'
 import FrequentTasks from '../FrequentTasks/FrequentTasks'
 import styles from './TodoContent.module.css'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { setNote } from '../../store/todoSlice'
 
 function TodoContent() {
+  const note = useSelector(state => state.todos.note)
+  const dispatch = useDispatch()
   return (
     <div className={`${styles.wrapper} container`}>
       <div className={styles.inner}>
@@ -14,7 +17,7 @@ function TodoContent() {
         <FrequentTasks />
         <div className={styles.note}>
           <label htmlFor="textarea">Заметка:</label>
-          <textarea id="textarea" className={styles.textarea} value="Доставку заказать только после 18:00, после этого сразу отправить чек" />
+          <textarea id="textarea" className={styles.textarea} value={note} onChange={(e) => dispatch(setNote(e.target.value))} />
         </div>
       </div>
       <div className={styles.inner}>
