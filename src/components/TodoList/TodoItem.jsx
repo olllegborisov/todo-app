@@ -63,7 +63,7 @@ export default function TodoItem({todo, listType}) {
 
 return (
         <Motion.li 
-        layout
+        layout="position"
         initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
         animate={{ 
             opacity: 1,  
