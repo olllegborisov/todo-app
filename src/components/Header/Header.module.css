@@ -2,6 +2,11 @@
     padding-top: 30px;
     background-color: #fff;
 }
+@media (max-width: 1200px) {
+    .wrapper {
+        padding-top: 50px;
+    }
+}
 
 .inner {
     display: flex;
@@ -31,4 +36,36 @@
 .text {
     font-weight: 400;
     font-size: 20px;
+}
+
+@media (max-width: 640px) {
+    .wrapper {
+        padding-top: 24px;
+    }
+
+    .inner {
+        gap: 12px;
+    }
+
+    .inner > svg {
+        width: 126px;
+        height: auto;
+    }
+
+    .actions {
+        gap: 6px;
+    }
+
+    .action {
+        gap: 6px;
+    }
+
+    .action svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
 }

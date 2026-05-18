@@ -3,6 +3,11 @@
   display: flex;
   gap: 12px;
 }
+@media (max-width: 1200px) {
+  .filter {
+    margin: 0 auto;
+  }
+}
 .button {
   border: 1px solid #221AB7;
   background: #fff;

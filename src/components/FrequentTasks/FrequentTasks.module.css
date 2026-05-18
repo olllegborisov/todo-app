@@ -6,8 +6,10 @@
     gap: 12px;
 
     
-    height: 107px;
     overflow: hidden;
+}
+.label {
+    font-size: 20px;
 }
 .buttonAccent {
     background-color: #221AB7;   

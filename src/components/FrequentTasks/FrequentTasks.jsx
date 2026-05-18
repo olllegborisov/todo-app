@@ -19,7 +19,8 @@ const FrequentTasks = () => {
     }
 
     return (
-        <>
+        <div className={styles.wrapper}>
+            <label className={styles.label}>Частые задачи:</label>
             <div className={styles.wrapper}>
                 <button className={`${styles.buttonAccent}`} onClick={refresh} aria-label="Обновить задачи"><RefreshIcon/></button>
                 {randomTasks.map((item, index) => {
@@ -28,7 +29,7 @@ const FrequentTasks = () => {
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 }
 
