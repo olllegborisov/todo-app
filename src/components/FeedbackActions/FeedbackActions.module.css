@@ -1,0 +1,44 @@
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+}
+@media (max-width: 1200px) {
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+.action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media (max-width: 744px) {
+    .actions {
+        gap: 6px;
+    }
+
+    .action {
+        gap: 6px;
+    }
+
+    .action svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+}
