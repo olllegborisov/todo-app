@@ -8,7 +8,7 @@
 @media (max-width: 1200px) {
   .wrapper {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 60px;
     margin-top: 60px;
   }
 }
@@ -45,4 +45,11 @@
   border: 1px solid #221AB7;
   height: 190px;
   font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .textarea {
+    height: 72px;
+    border-radius: 16px;
+  }
 }

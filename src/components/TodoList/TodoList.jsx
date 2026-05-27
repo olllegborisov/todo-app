@@ -16,7 +16,7 @@ export default function TodoList() {
         <LayoutGroup>
             <AnimatePresence mode="wait">
                 <div className={styles.listWrapper}>
-                    <div>Активные:</div>
+                    <div className={styles.listTitle}>Активные:</div>
                     <AnimatePresence mode="wait">
                         {activeTodos.length === 0 ? (
                             <Motion.div 
@@ -88,7 +88,7 @@ export default function TodoList() {
                     className={styles.listWrapper}
                 >
                     <Motion.div layout  >
-                        Выполненные:
+                        <div className={styles.listTitle}>Выполненные:</div>
                     </Motion.div>
                     <AnimatePresence mode="wait">
                         {completedTodos.length === 0 ? (

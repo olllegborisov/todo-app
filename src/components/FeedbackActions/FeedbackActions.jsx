@@ -3,10 +3,10 @@ import styles from './FeedbackActions.module.css'
 import EmailIcon from '../../assets/icons/email.svg?react'
 import TelegramIcon from '../../assets/icons/tg.svg?react'
 
-const FeedbackActions = () => {
+const FeedbackActions = ({isMobile}) => {
     return (
         <>                
-            <div className={styles.actions}>
+            <div className={`${styles.actions} ${isMobile ? styles.actionsMobile : ''}`}>
                 <a href="mailto:olllegborisov@gmail.com" className={styles.action}>
                     <EmailIcon />
                     <span className={styles.text}>olllegborisov@gmail.com</span>

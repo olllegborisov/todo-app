@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+.listTitle {
+  font-size: 20px;
+}
+
 .completed {
   text-decoration: line-through;
 }
@@ -129,11 +133,23 @@
   text-align: left;
 }
 
+@media (max-width: 1200px) {
+  .taskText {
+    font-size: 20px;
+  }
+}
+
 .itemActions {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .itemActions {
+    height: 24px;
+  }
 }
 
 .editRow {

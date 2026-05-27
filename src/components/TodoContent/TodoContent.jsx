@@ -5,6 +5,7 @@ import FrequentTasks from '../FrequentTasks/FrequentTasks'
 import styles from './TodoContent.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setNote } from '../../store/todoSlice'
+import FeedBackActions from '../FeedbackActions/FeedbackActions'
 
 function TodoContent() {
   const note = useSelector(state => state.todos.note)
@@ -24,6 +25,7 @@ function TodoContent() {
         <TodoFilter/>
         <TodoList />
       </div>
+      <FeedBackActions isMobile/>
     </div>
   )
 }
