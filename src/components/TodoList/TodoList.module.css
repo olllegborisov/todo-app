@@ -1,7 +1,9 @@
 .listWrapper {
   display: flex;
   flex-direction: column;
+  
 }
+
 
 .list {
   width: 100%;

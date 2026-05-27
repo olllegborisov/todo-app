@@ -30,6 +30,11 @@
     text-align: center;
   }
 }
+@media (max-width: 744px) {
+  .title {
+    font-size: 20px;
+  }
+}
 
 .note {
   display: flex;

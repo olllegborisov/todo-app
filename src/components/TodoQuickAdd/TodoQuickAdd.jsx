@@ -4,9 +4,9 @@ import { addTodo } from '../../store/todoSlice.js'
 import RefreshIcon from '../../assets/icons/refresh.svg?react'
 import tasks from '../../data/tasks.js'
 import getRandomTasks from '../../utils/getRandomTasks.js'
-import styles from './FrequentTasks.module.css'
+import styles from './TodoQuickAdd.module.css'
 
-const FrequentTasks = () => {
+const TodoQuickAdd = () => {
     const dispatch = useDispatch()
     const [randomTasks, setRandomTasks] = useState(() => getRandomTasks(tasks, 4))
 
@@ -33,4 +33,4 @@ const FrequentTasks = () => {
     )
 }
 
-export default FrequentTasks
+export default TodoQuickAdd
