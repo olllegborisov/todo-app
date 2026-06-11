@@ -15,8 +15,20 @@
   margin: 0;
 }
 
+@media (max-width: 744px) {
+  .list {
+    gap: 12px;  
+  }
+}
+
 .listTitle {
   font-size: 20px;
+}
+
+@media (max-width: 744px) {
+  .listTitle {
+      font-size: 16px;
+  }
 }
 
 .completed {
@@ -28,6 +40,8 @@
   margin-top: 24px;
   gap: 24px;
 }
+
+
 
 .emptyItem {
   display: flex;
@@ -51,6 +65,12 @@
   justify-content: space-between;
   gap: 12px;
   box-sizing: border-box;
+}
+
+@media (max-width: 744px) {
+  .item {
+    padding: 16px;
+  }
 }
 
 .taskRow {
@@ -102,6 +122,13 @@
   cursor: pointer;
 }
 
+@media (max-width: 744px) {
+  .btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .checkboxVisualChecked {
   background-color: #221ab7;
   border-color: #221ab7;
@@ -141,6 +168,12 @@
   }
 }
 
+@media (max-width: 744px) {
+  .taskText {
+    font-size: 16px;
+  }
+}
+
 .itemActions {
   display: flex;
   align-items: center;
@@ -151,6 +184,12 @@
 @media (max-width: 1200px) {
   .itemActions {
     height: 24px;
+  }
+}
+
+@media (max-width: 744px) {
+  .itemActions {
+    height: 20px;
   }
 }
 
@@ -170,4 +209,10 @@
   border: 1px solid #221ab7;
   border-radius: 12px;
   background: #fff;
+}
+
+@media (max-width: 744px) {
+  .listWrapper .listInnerWrapper {
+    margin-top: 12px!important;
+  }
 }

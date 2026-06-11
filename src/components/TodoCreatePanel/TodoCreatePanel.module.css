@@ -12,3 +12,28 @@
 .todoCreatePanel input {
     font-size: 16px;
 }
+
+.todoCreatePanelExpanded {
+    padding-top: 72px;
+}
+.dragHandle {
+    width: 32px;
+    height: 4px;
+    background-color: #221AB7;
+}
+
+.crossIcon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.detailsContainer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

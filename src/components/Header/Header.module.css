@@ -21,15 +21,15 @@
 
 @media (max-width: 640px) {
     .wrapper {
-        padding-top: 24px;
+        padding-top: 50px;
     }
 
     .inner {
-        gap: 12px;
+        gap: 24px;
     }
 
     .inner > svg {
-        width: 126px;
+        width: 158px;
         height: auto;
     }
 

@@ -9,6 +9,13 @@
     width: auto;
   }
 }
+@media (max-width: 744px) {
+  .filter {
+    margin: unset;
+    justify-content: center;
+    gap: 12px;
+  }
+}
 .button {
   border: 1px solid #221AB7;
   background: #fff;

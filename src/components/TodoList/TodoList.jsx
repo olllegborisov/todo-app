@@ -4,14 +4,13 @@ import { selectVisibleTodos } from '../../store/todoSlice'
 import styles from './TodoList.module.css'
 import TodoItem from './TodoItem'
 import EmptyIcon from '../../assets/icons/smile.svg?react'
+import { useMediaQuery } from '../../utils/useMediaQuery'
 
 export default function TodoList() {
-
-
     const todos = useSelector(selectVisibleTodos)
     const activeTodos = todos.filter(todo => !todo.isCompleted)
     const completedTodos = todos.filter(todo => todo.isCompleted)
-
+    const isMobile = useMediaQuery('(max-width: 744px)')
     return (
         <LayoutGroup>
             <AnimatePresence mode="wait">
@@ -39,7 +38,7 @@ export default function TodoList() {
                                 animate={{
                                     height: 'auto',
                                     opacity: 1,
-                                    marginTop: 24,
+                                    marginTop: isMobile ? 12 : 24,
                                 }}
                                 exit={{
                                     height: 0,
@@ -73,8 +72,8 @@ export default function TodoList() {
                     </AnimatePresence>
                 </div>
             </AnimatePresence>
-                    <AnimatePresence mode="wait">
 
+            <AnimatePresence mode="wait">
                 <Motion.div
                     key="completed-list"
                     layout="position"
@@ -90,7 +89,7 @@ export default function TodoList() {
                     <Motion.div layout  >
                         <div className={styles.listTitle}>Выполненные:</div>
                     </Motion.div>
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="wait" className={styles.list}>
                         {completedTodos.length === 0 ? (
                             <Motion.div 
                                 key="completed-empty"
@@ -112,7 +111,7 @@ export default function TodoList() {
                                 animate={{
                                     height: 'auto',
                                     opacity: 1,
-                                    marginTop: 24,
+                                    marginTop: isMobile ? 12 : 24,
                                 }}
                                 exit={{
                                     height: 0,

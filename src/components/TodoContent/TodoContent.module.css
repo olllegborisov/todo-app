@@ -12,6 +12,12 @@
     margin-top: 60px;
   }
 }
+@media (max-width: 744px) {
+  .wrapper {
+    margin-top: 32px;
+    gap: 32px;
+  }
+}
 .inner {
   display: flex;
   flex-direction: column;

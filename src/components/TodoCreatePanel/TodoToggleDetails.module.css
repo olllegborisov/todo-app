@@ -6,6 +6,7 @@
     color: #221AB7;
     font-weight: 600;
     display: block;
-    margin: 0 auto;
-    margin-top: 24px;
+    padding: 12px 32px;
+    width: 100%;
+    margin-top: 12px;
 }
