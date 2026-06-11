@@ -24,6 +24,7 @@
     height: 24px;
 }
 .button {
+    color: #000;
     background-color: #f2f1ff;
     padding: 12px 32px;
     font-size: 20px;
