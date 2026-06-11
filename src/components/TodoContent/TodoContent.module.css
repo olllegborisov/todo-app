@@ -54,7 +54,8 @@
 
 @media (max-width: 1200px) {
   .textarea {
-    height: 72px;
+    height: auto;
+    overflow: auto;
     border-radius: 16px;
   }
 }

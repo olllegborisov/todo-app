@@ -6,6 +6,7 @@
 @media (max-width: 1200px) {
   .filter {
     margin: 0 auto;
+    width: auto;
   }
 }
 .button {
