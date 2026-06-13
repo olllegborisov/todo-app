@@ -90,7 +90,7 @@ export default function TodoList() {
                     }}
                     className={styles.listWrapper}
                 >
-                    <Motion.div layout  >
+                    <Motion.div>
                         <div className={styles.listTitle}>Выполненные:</div>
                     </Motion.div>
                     <AnimatePresence mode="wait" className={styles.list}>
@@ -128,7 +128,7 @@ export default function TodoList() {
                                     marginTop: { duration: 0.35, ease: 'easeInOut' },
                                 }}
                             >
-                                <Motion.ul layout
+                                <Motion.ul
                                     className={styles.list}
                                     transition={{
                                         layout: {
