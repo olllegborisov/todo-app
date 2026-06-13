@@ -8,6 +8,12 @@
   font-size: 20px;
 }
 
+@media (max-width: 744px) {
+  .label {
+    font-size: 16px;
+  }
+}
+
 
 .inputWrapper {
   display: grid;
@@ -34,19 +40,18 @@
   }
 }
 
-.input:hover {
+/* .input:hover {
   border: 1px solid #0E0A54;
   background-color: #F2F1FF;
 }
 .input:focus {
   border: 1px solid #302F3D ;
-}
+} */
 
 .button {
   padding: 12px 32px;
   color: #fff;
   border-radius: 30px;
-  background-color: #221AB7;
   border: none;
   font-size: 20px;
   cursor: pointer;

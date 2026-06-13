@@ -21,8 +21,8 @@ const TodoQuickAdd = () => {
     return (
         <div className={styles.wrapper}>
             <label className={styles.label}>Частые задачи:</label>
-            <div className={styles.wrapper}>
-                <button className={`${styles.buttonAccent}`} onClick={refresh} aria-label="Обновить задачи"><RefreshIcon/></button>
+            <div className={styles.innerWrapper}>
+                <button className={`${styles.refreshButton} accent-button`} onClick={refresh} aria-label="Обновить задачи"><RefreshIcon/></button>
                 {randomTasks.map((item, index) => {
                     return (
                         <button key={index} className={styles.button} onClick={() => handleClick(item)} >{item}</button>

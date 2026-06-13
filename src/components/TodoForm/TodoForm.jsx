@@ -25,8 +25,13 @@ export default function TodoForm({placeholder, hideLabel}) {
                     htmlFor="todo"
                 >Новая задача:</label>
                 <div className={styles.inputWrapper}>
-                    <input className={styles.input} id="todo"  placeholder={placeholder ? placeholder : 'Введите текст'} onChange={(e) => setTodo(e.target.value)} value={todo}></input>
-                    <button className={styles.button} type='submit'>Добавить задачу</button>
+                    <input 
+                        className={`${styles.input} form-field`} id="todo"  
+                        placeholder={placeholder ? placeholder : 'Введите текст'} 
+                        onChange={(e) => setTodo(e.target.value)} 
+                        value={todo} 
+                    />
+                    <button className={`${styles.button} accent-button`} type='submit'>Добавить задачу</button>
                 </div>
             </form>
         </>

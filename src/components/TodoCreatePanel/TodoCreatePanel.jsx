@@ -35,11 +35,14 @@ const TodoCreatePanel = () => {
                 <TodoForm hideLabel={!showDetails} placeholder="Новая задача..."/>
                 <AnimatePresence>
                     {showDetails && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25 }}
+                            transition={{
+                                height: { duration: 0.35 },
+                                opacity: { duration: 0.25 }
+                            }}
                             style={{ overflow: 'hidden' }}
                             className={styles.detailsContainer}
                         >

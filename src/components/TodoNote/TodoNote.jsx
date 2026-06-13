@@ -11,8 +11,14 @@ const TodoNote = () => {
     return (
         <>
             <div className={styles.note}>
-                <label htmlFor="textarea">Заметка:</label>
-                <textarea id="textarea" className={styles.textarea} value={note} onChange={(e) => dispatch(setNote(e.target.value))} />
+                <label className={styles.label} htmlFor="textarea">Заметка:</label>
+                <textarea 
+                    id="textarea" 
+                    className={`${styles.textarea} form-field`} 
+                    placeholder="Введите текст заметки" 
+                    value={note} 
+                    onChange={(e) => dispatch(setNote(e.target.value))} 
+                />
             </div>
         </>
     )

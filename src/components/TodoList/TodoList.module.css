@@ -65,6 +65,9 @@
   justify-content: space-between;
   gap: 12px;
   box-sizing: border-box;
+  transition: ease 0.2s;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 744px) {
@@ -72,6 +75,93 @@
     padding: 16px;
   }
 }
+
+.item {
+    position: relative;
+    overflow: hidden;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #221ab7;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 0;
+}
+
+.item:hover::before {
+    animation: fill 0.3s forwards;
+}
+
+@media (max-width: 744px) {
+  .item:hover::before {
+      animation: none;
+  }
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.item > * {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+
+
+@media (min-width: 744px) {
+
+  .item:hover span {
+    transition: color 0.2s;
+  }
+
+  .item:hover span {
+    color: #fff;
+  }
+
+
+
+  .item:hover .checkboxVisual {
+    background-color: #fff;
+    border-color: #fff;
+  }
+    
+  .item:hover .checkboxVisualChecked {
+    background-color: #fff;
+    border: 1px solid #75739b;
+  }
+
+  .item .checkboxVisualChecked {
+    transition: ease 0.2s;
+  }
+
+
+  .item:hover .checkboxVisualChecked .checkmark:after {
+    color: red;
+  }
+
+  .item:hover .btn {
+    transition-delay: 0.2s;
+  }
+
+  .item:hover .btn {
+    color: #fff;
+  }
+
+  .item:hover .checkboxVisualChecked svg {
+    color: #221AB7;
+  }
+}
+
 
 .taskRow {
   display: flex;
@@ -86,7 +176,11 @@
   display: inline-flex;
   flex-shrink: 0;
   cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
+
+
+
 
 .checkboxInput {
   position: absolute;
@@ -111,7 +205,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: ease 2s;
+}
+.checkboxVisual:hover {
+  border-color: #0E0A54;
+  background-color: #f2f1ff;
 }
 
 .btn {
@@ -120,7 +218,11 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
+  color: #302F3D;
+
 }
+
+
 
 @media (max-width: 744px) {
   .btn svg {
@@ -132,26 +234,25 @@
 .checkboxVisualChecked {
   background-color: #221ab7;
   border-color: #221ab7;
+  transition: background-color 0.2s;
 }
+
+.checkboxVisualChecked:hover {
+  background-color: #0E0A54;
+  border-color: #0E0A54;
+}
+
+.checkboxVisualChecked svg {
+  color: #fff;
+}
+
+
 
 .checkboxInput:focus-visible + .checkboxVisual {
   outline: 2px solid #221ab7;
   outline-offset: 2px;
 }
 
-.checkmark {
-  position: relative;
-}
-.checkmark::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: url('../../assets/icons/check.svg') no-repeat center center;
-  transform: translate(-50%, -50%);
-  width: 19px;
-  height: 13px;
-}
 
 .taskText {
   font-size: 24px;
@@ -216,3 +317,4 @@
     margin-top: 12px!important;
   }
 }
+

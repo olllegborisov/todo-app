@@ -13,6 +13,7 @@
   font-display: swap;
 }
 
+
 *,
 *::before,
 *::after {
@@ -42,6 +43,36 @@ textarea,
 select {
   font-family: inherit;
 }
+
+.form-field {
+  border: 1px solid #221AB7;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-field:hover {
+  border: 1px solid #0E0A54;
+  background-color: #F2F1FF;
+}
+.form-field:focus {
+  border: 1px solid #0E0A54 ;
+}
+.form-field:disabled {
+  border: 1px solid #DB0D0D;
+  color:#DB0D0D;
+}
+
+.accent-button {
+  background-color: #221AB7;
+  transition: background-color 0.2s;
+}
+.accent-button:hover {
+  background-color: #0E0A54;
+}
+
+.accent-button:focus {
+  background-color: #221AB7;
+}
+
 
 /* :root {
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;

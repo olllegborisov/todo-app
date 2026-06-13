@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux'
 import { toggleTodo, removeTodo, editTodo } from '../../store/todoSlice'
 import DeleteIcon from '../../assets/icons/delete.svg?react'
 import EditIcon from '../../assets/icons/edit.svg?react'
+import CheckIcon from '../../assets/icons/check.svg?react'
 import styles from './TodoList.module.css'
+
 
 export default function TodoItem({todo, listType}) {
     
@@ -63,34 +65,34 @@ export default function TodoItem({todo, listType}) {
 
 return (
         <Motion.li 
-        layout="position"
-        initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
-        animate={{ 
-            opacity: 1,  
-            y: 0,
-            filter: 'blur(0px)',
-            transition: currentAnimation.enter,
-        }}
-        exit={{ 
-            opacity: 0,  
-            y: 16,
-            filter: 'blur(10px)' ,
-            transition: currentAnimation.exit,
-        }}
-        transition={{
-                layout: {
-                type: 'spring',
-                stiffness: 90,
-                damping: 18,
-            },
-        }}
-            className={styles.item}
+            layout="position"
+            initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
+            animate={{ 
+                opacity: 1,  
+                y: 0,
+                filter: 'blur(0px)',
+                transition: currentAnimation.enter,
+            }}
+            exit={{ 
+                opacity: 0,  
+                y: 16,
+                filter: 'blur(10px)' ,
+                transition: currentAnimation.exit,
+            }}
+            transition={{
+                    layout: {
+                    type: 'spring',
+                    stiffness: 90,
+                    damping: 18,
+                },
+            }}
+            className={`${styles.item}`}
         >
         {editingId === todo.id ? (
             <>
                 <div className={styles.editRow}>
                     <input
-                        className={styles.editInput}
+                        className={`${styles.editInput} form-field`}
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                         onKeyDown={(e) => handleKeyDown(e)}
@@ -124,7 +126,7 @@ return (
                             className={`${styles.checkboxVisual} ${todo.isCompleted ? styles.checkboxVisualChecked : ''}`}
                             aria-hidden
                         >
-                            {todo.isCompleted ? <span className={styles.checkmark} /> : null}
+                            {todo.isCompleted ? <CheckIcon className={styles.checkmarkIcon} /> : null}
                         </span>
                     </label>
                     <span
