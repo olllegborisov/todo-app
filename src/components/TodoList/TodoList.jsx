@@ -1,4 +1,5 @@
 import { AnimatePresence, LayoutGroup, motion as Motion } from 'motion/react'
+import { useState } from 'react'
 import { useSelector} from 'react-redux'
 import { selectVisibleTodos } from '../../store/todoSlice'
 import styles from './TodoList.module.css'
@@ -11,10 +12,11 @@ export default function TodoList() {
     const activeTodos = todos.filter(todo => !todo.isCompleted)
     const completedTodos = todos.filter(todo => todo.isCompleted)
     const isMobile = useMediaQuery('(max-width: 744px)')
+    const [isAnimating, setIsAnimating] = useState(false)
     return (
         <LayoutGroup>
             <AnimatePresence mode="wait">
-                <div className={styles.listWrapper}>
+                <div className={`${styles.listWrapper} ${isAnimating ? styles.animating : ''}`}>
                     <div className={styles.listTitle}>Активные:</div>
                     <AnimatePresence mode="wait">
                         {activeTodos.length === 0 ? (
@@ -60,6 +62,8 @@ export default function TodoList() {
                                             damping: 18,
                                         },
                                     }}
+                                    onAnimationStart={() => setIsAnimating(true)}
+                                    onAnimationComplete={() => setIsAnimating(false)}
                                 >     
                                     <AnimatePresence>
                                         {activeTodos.map(todo => (
@@ -133,6 +137,8 @@ export default function TodoList() {
                                             damping: 18,
                                         },
                                     }}
+                                    onAnimationStart={() => setIsAnimating(true)}
+                                    onAnimationComplete={() => setIsAnimating(false)}
                                 >  
                                     <AnimatePresence>
                                         {completedTodos.map(todo => (

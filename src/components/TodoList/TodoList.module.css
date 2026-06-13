@@ -95,20 +95,26 @@
     animation: fill 0.3s forwards;
 }
 
+.animating .item:hover::before {
+  transform: scaleX(0) !important;
+  animation: none !important;
+}
+
+
 @media (max-width: 744px) {
   .item:hover::before {
       animation: none;
   }
 }
 
-@keyframes fill {
+/* @keyframes fill {
   from {
     transform: scaleX(0);
   }
   to {
     transform: scaleX(1);
   }
-}
+} */
 
 .item > * {
     position: relative;
@@ -117,7 +123,7 @@
 }
 
 
-
+/* 
 @media (min-width: 744px) {
 
   .item:hover span {
@@ -160,8 +166,7 @@
   .item:hover .checkboxVisualChecked svg {
     color: #221AB7;
   }
-}
-
+} */
 
 .taskRow {
   display: flex;
