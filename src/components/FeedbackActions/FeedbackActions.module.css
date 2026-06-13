@@ -27,6 +27,7 @@
 @media (max-width: 744px) {
     .actions {
         gap: 6px;
+        margin-bottom: 100px;
     }
 
     .action {
