@@ -53,7 +53,7 @@ export default function TodoList() {
                                     marginTop: { duration: 0.35, ease: 'easeInOut' },
                                 }}
                             >
-                                <Motion.ul layout
+                                <Motion.ul
                                     className={styles.list}
                                     transition={{
                                         layout: {
@@ -128,7 +128,7 @@ export default function TodoList() {
                                     marginTop: { duration: 0.35, ease: 'easeInOut' },
                                 }}
                             >
-                                <Motion.ul layout
+                                <Motion.ul
                                     className={styles.list}
                                     transition={{
                                         layout: {
