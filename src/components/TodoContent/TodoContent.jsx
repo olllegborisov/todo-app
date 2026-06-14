@@ -1,4 +1,4 @@
-import { useMediaQuery } from '../../utils/useMediaQuery'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 import TodoForm from '../TodoForm/TodoForm'
 import TodoList from '../TodoList/TodoList'
 import TodoFilter from '../TodoFilter/TodoFilter'

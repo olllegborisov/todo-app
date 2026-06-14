@@ -23,14 +23,7 @@
     background-color: #221AB7;
 }
 
-.crossIcon {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
+
 
 .detailsContainer {
     margin-top: 24px;
