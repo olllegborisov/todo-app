@@ -264,11 +264,16 @@
   border: 1px solid #221ab7;
   border-radius: 12px;
   background: #fff;
+  width: 100%;
 }
 
 @media (max-width: 744px) {
   .listWrapper .listInnerWrapper {
     margin-top: 12px!important;
+  }
+  .editInput {
+    font-size: 16px;
+    padding: 8px 12px;
   }
 }
 
