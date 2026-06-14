@@ -109,14 +109,6 @@
   }
 }
 
-/* @keyframes fill {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-} */
 
 .item > * {
     position: relative;
@@ -124,51 +116,6 @@
     transition: color 0.3s ease;
 }
 
-
-/* 
-@media (min-width: 744px) {
-
-  .item:hover span {
-    transition: color 0.2s;
-  }
-
-  .item:hover span {
-    color: #fff;
-  }
-
-
-
-  .item:hover .checkboxVisual {
-    background-color: #fff;
-    border-color: #fff;
-  }
-    
-  .item:hover .checkboxVisualChecked {
-    background-color: #fff;
-    border: 1px solid #75739b;
-  }
-
-  .item .checkboxVisualChecked {
-    transition: ease 0.2s;
-  }
-
-
-  .item:hover .checkboxVisualChecked .checkmark:after {
-    color: red;
-  }
-
-  .item:hover .btn {
-    transition-delay: 0.2s;
-  }
-
-  .item:hover .btn {
-    color: #fff;
-  }
-
-  .item:hover .checkboxVisualChecked svg {
-    color: #221AB7;
-  }
-} */
 
 .taskRow {
   display: flex;
