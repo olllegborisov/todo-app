@@ -28,10 +28,13 @@
 
 
 
+
 @media (max-width: 1200px) {
     .textarea {
         height: auto;
         overflow: auto;
+        padding: 12px 24px;
         border-radius: 16px;
+        font-size: 16px;  
     }
 }
