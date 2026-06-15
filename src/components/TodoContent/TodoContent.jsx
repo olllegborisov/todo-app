@@ -27,7 +27,6 @@ function TodoContent() {
         <TodoFilter/>
         <TodoList />
       </div>
-      <FeedBackActions isMobile/>
     </div>
   )
 }
