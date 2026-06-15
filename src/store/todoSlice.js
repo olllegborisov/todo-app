@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 const initialState = {
     list: [],
     filter: 'all',
-    note: 'Доставку заказать только после 18:00, после этого сразу отправить чек'
+    note: ''
 }
 
 const todoSlice = createSlice({
