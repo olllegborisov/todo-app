@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { selectVisibleTodos } from '../../store/todoSlice'
 import { selectFilter, selectTodos } from '../../store/todoSlice'
 
-import TodoSection from './TodoSection'
+import TodoSection from './TodoSection/TodoSection'
 
 export default function TodoList() {
     const todos = useSelector(selectTodos)

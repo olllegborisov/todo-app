@@ -1,7 +1,7 @@
-import TodoItem from './TodoItem'
-import EmptyIcon from '../../assets/icons/smile.svg?react'
+import TodoItem from '../TodoItem/TodoItem'
+import EmptyIcon from '../../../assets/icons/smile.svg?react'
 
-import styles from './TodoList.module.css'
+import styles from './TodoSection.module.css'
 
 export default function TodoSection({ title, todos }) {
     return (

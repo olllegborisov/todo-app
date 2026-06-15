@@ -47,7 +47,7 @@ select {
 input:focus, textarea:focus, select:focus {
     outline: none; /* Убирает стандартную обводку */
     box-shadow: none; /* Убирает свечение в некоторых браузерах */
-}
+}   
 
 .form-field {
   border: 1px solid #221AB7;
