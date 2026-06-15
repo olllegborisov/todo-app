@@ -60,9 +60,8 @@ export const selectVisibleTodos = (state) => {
         return list.filter(todo => todo.isCompleted)
     }
 
-    return state
+    return list
 }
-
 
 
 
