@@ -5,6 +5,7 @@ import { toggleTodo, removeTodo, editTodo } from '../../store/todoSlice'
 import DeleteIcon from '../../assets/icons/delete.svg?react'
 import EditIcon from '../../assets/icons/edit.svg?react'
 import CheckIcon from '../../assets/icons/check.svg?react'
+import CrossIcon from '../../assets/icons/cross.svg?react'
 
 import styles from './TodoList.module.css'
 
@@ -24,12 +25,16 @@ export default function TodoItem({ todo }) {
         setEditingId(null)
     }
 
+    const handleCancel = () => {
+        setEditingId(null)
+        setText(todo.text)
+    }
+
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') handleSave()
 
         if (e.key === 'Escape') {
-            setEditingId(null)
-            setText(todo.text)
+            handleCancel()
         }
     }
 
@@ -44,25 +49,24 @@ export default function TodoItem({ todo }) {
                             onChange={(e) => setText(e.target.value)}
                             onKeyDown={handleKeyDown}
                         />
-
-                        <button
-                            type="button"
-                            className={styles.btn}
-                            onClick={handleSave}
-                            aria-label="Сохранить задачу"
-                        >
-                            <EditIcon />
-                        </button>
                     </div>
 
                     <div className={styles.itemActions}>
                         <button
                             type="button"
                             className={styles.btn}
-                            onClick={() => dispatch(removeTodo(todo.id))}
+                            onClick={handleSave}
+                            aria-label="Сохранить задачу"
+                        >
+                            <CheckIcon />
+                        </button>
+                        <button
+                            type="button"
+                            className={styles.btn}
+                            onClick={handleCancel}
                             aria-label="Удалить задачу"
                         >
-                            <DeleteIcon />
+                            <CrossIcon />
                         </button>
                     </div>
                 </>
