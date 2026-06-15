@@ -1,11 +1,14 @@
 import { useSelector } from 'react-redux'
 
 import { selectVisibleTodos } from '../../store/todoSlice'
+import { selectFilter, selectTodos } from '../../store/todoSlice'
 
 import TodoSection from './TodoSection'
 
 export default function TodoList() {
-    const todos = useSelector(selectVisibleTodos)
+    const todos = useSelector(selectTodos)
+    const filter = useSelector(selectFilter)
+    
 
     const activeTodos = todos.filter(
         (todo) => !todo.isCompleted
@@ -17,15 +20,19 @@ export default function TodoList() {
 
     return (
         <>
-            <TodoSection
-                title="Активные:"
-                todos={activeTodos}
-            />
+            {(filter === 'all' || filter === 'active') && (
+                <TodoSection
+                    title="Активные:"
+                    todos={activeTodos}
+                />
+            )}
 
-            <TodoSection
-                title="Выполненные:"
-                todos={completedTodos}
-            />
+            {(filter === 'all' || filter === 'completed') && (
+                <TodoSection
+                    title="Выполненные:"
+                    todos={completedTodos}
+                />
+            )}
         </>
     )
 }

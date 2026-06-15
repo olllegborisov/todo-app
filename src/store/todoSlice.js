@@ -8,6 +8,9 @@ const initialState = {
     note: ''
 }
 
+export const selectTodos = state => state.todos.list
+export const selectFilter = state => state.todos.filter
+
 const todoSlice = createSlice({
     name: 'todos',
     initialState,
@@ -57,8 +60,11 @@ export const selectVisibleTodos = (state) => {
         return list.filter(todo => todo.isCompleted)
     }
 
-    return list
+    return state
 }
+
+
+
 
 export const { addTodo, removeTodo, toggleTodo, setFilter, editTodo, setNote } = todoSlice.actions
 export default todoSlice.reducer
