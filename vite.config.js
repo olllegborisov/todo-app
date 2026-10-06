@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     svgr(),
   ],
+  base: '/todo-app/',
 })
